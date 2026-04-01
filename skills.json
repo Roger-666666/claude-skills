@@ -1,0 +1,15 @@
+● {
+    "name": "claude-skills",
+    "description": "Claude Code 技能集合",
+    "version": "1.0.0",
+    "skills": [
+      {
+        "name": "prompt-deep-creator",
+        "description": "将口述/随意的提示词深度创作，转化为结构化、专业的正式提示词模板。支持多种内容类型的深度创作",
+        "author": "User",
+        "categories": ["写作", "内容创作", "效率工具"],
+        "keywords": ["提示词", "prompt", "创作", "写作", "内容生成", "模板"],
+        "dir": "prompt-deep-creator"
+      }
+    ]
+  }
