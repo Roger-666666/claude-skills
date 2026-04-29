@@ -1,52 +1,23 @@
- # prompt-deep-creator 提示词深度创作
+# Claude Code Skills Collection (技能合集)
 
-  将口述/随意的提示词深度创作，转化为结构化、专业的正式提示词模板。
+欢迎来到我的 Claude Code 技能库！这里收录了多个用于提升工作效率、规范工作流的结构化 AI 技能。
 
-  ## 功能
+你可以根据需求，点击下方技能面板展开查看具体的功能介绍与安装使用说明。
 
-  - 🌱 **智能提取** - 从零散描述中提取核心要素
-  - 🎯 **结构化输出** - 生成可直接使用的专业提示词
-  - 💬 **智能追问** - 自动识别缺失信息并补充
-  - 📚 **多场景覆盖** - 支持文章、方案、代码、课程等多种内容类型
+---
 
-  ## 适用场景
+<details>
+<summary><b>🏛️ sansheng | 三省六部多Agent思维框架 (New!) </b></summary>
+<br>
 
-  | 场景 | 说明 |
-  |------|------|
-  | 写作创作 | 文章、故事、文案、邮件 |
-  | 方案设计 | 商业方案、项目计划、产品设计 |
-  | 代码开发 | 功能描述、技术文档、代码审查 |
-  | 学习教育 | 课程设计、习题生成、知识讲解 |
-  | 内容营销 | 社媒帖子、广告文案、推广内容 |
-  | 分析报告 | 市场分析、数据报告、调研总结 |
+将任何复杂任务按照“太子(分拣)→中书省(规划)→门下省(审议)→尚书省(派发)→六部(执行)→汇总”的流程进行结构化处理。这不仅是一个提示词，更是一个处理一切复杂任务的通用流程规范。
 
-  ## 使用方法
+**核心功能**
+- 🛡️ **严格流程管理**：从接旨分拣到最终汇总，层层递进，确保任务不跑偏。
+- 👁️ **门下省严格把关**：特设审查机制，方案不合格直接封驳重做。
+- ⚙️ **六部落地执行**：兵部写代码、礼部写文档、工部搞基建...每个部门必须输出具体的实际成果。
+- 📊 **可视化看板支持**：内置 Python 脚本支持启动 Web 看板（需配置）。
 
-  1. 在 Claude Code 中调用技能：`/prompt-deep-creator`
-  2. 输入你的创作需求（可以是口语化、模糊的描述）
-  3. 技能会自动深度创作，生成结构化提示词
-  4. 根据需要调整后使用
-
-  ## 文件结构
-
-  prompt-deep-creator/
-  ├── skill.json           # 技能元数据
-  ├── skill.md            # 技能说明文档
-  └── references/
-      ├── templates.md    # 分类提示词模板库
-      └── examples.md     # 完整实战范例
-
-  ## 安装
-
-  ```bash
-  skillhub install --index https://你的用户名.github.io/claude-skills/skills.json prompt-deep-creator
-
-  License
-
-  MIT
-
-  ---
-
-  **GitHub 上传顺序：**
-  1. 先上传 `skill.json`、`skill.md`、`README.md`
-  2. 再上传 `references/` 文件夹里的两个文件
+**安装方法**
+```bash
+skillhub install --index [https://你的用户名.github.io/claude-skills/skills.json](https://你的用户名.github.io/claude-skills/skills.json) sansheng
