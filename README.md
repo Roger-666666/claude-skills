@@ -20,4 +20,4 @@
 
 **安装方法**
 ```bash
-skillhub install --index [https://你的用户名.github.io/claude-skills/skills.json](https://你的用户名.github.io/claude-skills/skills.json) sansheng
+skillhub install --index [https://raw.githubusercontent.com/Roger-666666/claude-skills/main/skills.json](https://raw.githubusercontent.com/Roger-666666/claude-skills/main/skills.json) sansheng
