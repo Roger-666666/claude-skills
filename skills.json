@@ -1,46 +1,173 @@
 {
-  "name": "claude-skills",
+  "name": "claude-skills-bilingual-codex",
   "description": {
-    "en": "Claude Code Skills Collection",
-    "zh": "Claude Code 技能集合"
+    "en": "Claude Code Skills Library - Complete Bilingual Collection (English + Chinese) with Codex Integration",
+    "zh": "Claude Code 技能合集 - 完整双语版（中/英）支持 Codex 集成"
   },
   "version": "1.0.0",
+  "author": "Roger-666666",
+  "license": "MIT",
+  "repository": "https://github.com/Roger-666666/claude-skills-bilingual-codex",
   "languages": ["en", "zh"],
   "defaultLanguage": "en",
+  "platforms": ["claude-cli", "claude-code", "codex"],
+  "features": {
+    "en": [
+      "Bilingual documentation (English/Chinese)",
+      "Language switching support",
+      "Web Kanban interface",
+      "CLI automation tools",
+      "Multi-agent thinking framework",
+      "Structured prompt creation"
+    ],
+    "zh": [
+      "双语文档（中/英）",
+      "语言切换支持",
+      "Web 看板界面",
+      "CLI 自动化工具",
+      "多 Agent 思维框架",
+      "结构化提示词创建"
+    ]
+  },
   "skills": [
     {
       "name": "prompt-deep-creator",
+      "slug": "prompt-deep-creator",
       "description": {
-        "en": "Transform oral/casual prompts into structured, professional formal prompt templates. Supports deep creation for multiple content types",
-        "zh": "将口述/随意的提示词深度创作，转化为结构化、专业的正式提示词模板。支持多种内容类型的深度创作"
+        "en": "Transform oral/casual prompts into structured, professional formal prompt templates. Supports deep creation for multiple content types including technical blogs, business proposals, academic papers, and creative writing.",
+        "zh": "将口述/随意的提示词深度创作，转化为结构化、专业的正式提示词模板。支持多种内容类型的深度创作，包括技术博客、商业方案、学术论文和创意写作。"
       },
-      "author": "User",
+      "author": "Roger-666666",
+      "version": "1.0.0",
       "categories": {
-        "en": ["Writing", "Content Creation", "Productivity Tools"],
-        "zh": ["写作", "内容创作", "效率工具"]
+        "en": ["Writing", "Content Creation", "Productivity Tools", "AI Enhancement"],
+        "zh": ["写作", "内容创作", "效率工具", "AI 增强"]
       },
       "keywords": {
-        "en": ["prompt", "creation", "writing", "content generation", "template"],
-        "zh": ["提示词", "prompt", "创作", "写作", "内容生成", "模板"]
+        "en": ["prompt", "creation", "writing", "content generation", "template", "structured", "professional"],
+        "zh": ["提示词", "prompt", "创作", "写作", "内容生成", "模板", "结构化", "专业"]
       },
-      "dir": "prompt-deep-creator"
+      "useCases": {
+        "en": [
+          "Technical blog writing",
+          "Business proposal creation",
+          "Academic paper drafting",
+          "Marketing content generation",
+          "Documentation writing"
+        ],
+        "zh": [
+          "技术博客写作",
+          "商业方案创建",
+          "学术论文起草",
+          "营销内容生成",
+          "文档编写"
+        ]
+      },
+      "dir": "prompt-deep-creator",
+      "file": "skill.md",
+      "installation": {
+        "en": "Extract prompt-deep-creator.zip and follow instructions in skill.md",
+        "zh": "解压 prompt-deep-creator.zip 并按照 skill.md 中的说明操作"
+      }
     },
     {
       "name": "sansheng",
+      "slug": "sansheng",
       "description": {
-        "en": "Three Provinces and Six Ministries multi-agent thinking framework. Structure any complex task through Crown Prince (sorting) → Secretariat (planning) → Chancellery (review) → Department of State Affairs (dispatch) → Six Ministries (execution) → Summary.",
-        "zh": "三省六部多Agent思维框架。将任何复杂任务按照太子(分拣)→中书省(规划)→门下省(审议)→尚书省(派发)→六部(执行)→汇总的流程进行结构化处理。"
+        "en": "Three Provinces and Six Ministries multi-agent thinking framework. Structure any complex task through Crown Prince (sorting) → Secretariat (planning) → Chancellery (review) → Department of State Affairs (dispatch) → Six Ministries (execution) → Summary. Universal task processing system with quality control.",
+        "zh": "三省六部多Agent思维框架。将任何复杂任务按照太子(分拣)→中书省(规划)→门下省(审议)→尚书省(派发)→六部(执行)→汇总的流程进行结构化处理。通用任务处理系统，具备质量控制机制。"
       },
-      "author": "User",
+      "author": "Roger-666666",
+      "version": "1.0.0",
       "categories": {
-        "en": ["AI Agent", "Task Management", "Thinking Framework"],
-        "zh": ["AI Agent", "任务管理", "思维框架"]
+        "en": ["AI Agent", "Task Management", "Thinking Framework", "Workflow Automation"],
+        "zh": ["AI Agent", "任务管理", "思维框架", "工作流自动化"]
       },
       "keywords": {
-        "en": ["multi-agent", "task processing", "workflow", "thinking framework", "sansheng"],
-        "zh": ["多Agent", "任务处理", "工作流", "思维框架", "三省六部"]
+        "en": ["multi-agent", "task processing", "workflow", "thinking framework", "sansheng", "quality control"],
+        "zh": ["多Agent", "任务处理", "工作流", "思维框架", "三省六部", "质量控制"]
       },
-      "dir": "sansheng"
+      "useCases": {
+        "en": [
+          "Complex project planning",
+          "Technical system design",
+          "Business process optimization",
+          "Content creation workflows",
+          "Team coordination and management"
+        ],
+        "zh": [
+          "复杂项目规划",
+          "技术系统设计",
+          "业务流程优化",
+          "内容创作工作流",
+          "团队协调与管理"
+        ]
+      },
+      "departments": {
+        "en": [
+          "Ministry of Revenue (Data & Resources)",
+          "Ministry of Rites (Documents & Communication)",
+          "Ministry of War (Engineering & Technology)",
+          "Ministry of Justice (Audit & Compliance)",
+          "Ministry of Works (Infrastructure & Deployment)",
+          "Ministry of Personnel (HR & Team Management)"
+        ],
+        "zh": [
+          "户部（数据与资源）",
+          "礼部（文档与沟通）",
+          "兵部（工程与技术）",
+          "刑部（审计与合规）",
+          "工部（基础设施与部署）",
+          "吏部（人事与团队管理）"
+        ]
+      },
+      "dir": "sansheng",
+      "file": "SKILL.md",
+      "installation": {
+        "en": "See SKILL.md for detailed installation instructions. Supports CLI and Web Kanban modes.",
+        "zh": "详见 SKILL.md 安装说明。支持 CLI 和 Web 看板模式。"
+      },
+      "requirements": {
+        "en": ["Python 3.6+", "Claude CLI (optional)"],
+        "zh": ["Python 3.6+", "Claude CLI（可选）"]
+      }
     }
-  ]
+  ],
+  "installation": {
+    "quickStart": {
+      "en": [
+        "Clone the repository: git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git",
+        "Navigate to directory: cd claude-skills-bilingual-codex",
+        "Switch language: ./switch_lang.sh en (or zh)",
+        "Follow the installation guide in INSTALL.md"
+      ],
+      "zh": [
+        "克隆仓库：git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git",
+        "进入目录：cd claude-skills-bilingual-codex",
+        "切换语言：./switch_lang.sh en（或 zh）",
+        "按照 INSTALL.md 中的安装指南操作"
+      ]
+    }
+  },
+  "documentation": {
+    "en": {
+      "readme": "README.md",
+      "installation": "INSTALL.md",
+      "usage": "USAGE.md",
+      "summary": "SUMMARY.md"
+    },
+    "zh": {
+      "readme": "README_CN.md",
+      "installation": "INSTALL.md",
+      "usage": "USAGE.md",
+      "summary": "SUMMARY.md"
+    }
+  },
+  "metadata": {
+    "created": "2026-06-02",
+    "lastUpdated": "2026-06-02",
+    "size": "29KB",
+    "files": 15,
+    "languages": 2
+  }
 }

@@ -1,72 +1,108 @@
-# 🛡️ Claude Code 技能合集 (Skills Library)
+# 🛡️ Claude Code 技能合集 - 双语版 (中/英)
 
-欢迎来到我的 Claude Code 技能库！本项目收录了一系列针对 **Claude CLI (如小龙虾、Claude Code)** 优化的结构化 AI 技能。
+[![GitHub stars](https://img.shields.io/github/stars/Roger-666666/claude-skills-bilingual-codex?style=social)](https://github.com/Roger-666666/claude-skills-bilingual-codex/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Roger-666666/claude-skills-bilingual-codex?style=social)](https://github.com/Roger-666666/claude-skills-bilingual-codex/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/Roger-666666/claude-skills-bilingual-codex)](https://github.com/Roger-666666/claude-skills-bilingual-codex/issues)
+[![GitHub license](https://img.shields.io/github/license/Roger-666666/claude-skills-bilingual-codex)](https://github.com/Roger-666666/claude-skills-bilingual-codex/blob/main/LICENSE)
 
-这些技能通过增强 AI 的思维链（CoT）和多 Agent 协作能力，显著提升复杂任务的处理质量。
+欢迎来到 **Claude Code 技能合集** - 一个全面的、双语（中/英）结构化 AI 技能库，专为 **Claude CLI**、**Claude Code** 和 **OpenAI Codex** 优化。
 
 ---
 
-**[📖 English Version / 英文版](README.md)**
+## 📖 快速导航
+
+- **[English Documentation / 英文文档](README.md)**
+- **[中文文档](README_CN.md)** (当前)
+- **[安装指南](INSTALL.md)**
+- **[使用指南](USAGE.md)**
+- **[完整总结](SUMMARY.md)**
 
 ---
 
-## 🛠️ 技能列表 (Skills List)
+## 🎯 本仓库提供什么
+
+本仓库提供了一个完整的双语技能系统，旨在增强 AI 辅助编码和任务处理能力。无论你使用 Claude CLI、Claude Code 还是 OpenAI Codex，这些技能都将显著提高你的生产力和 AI 生成输出的质量。
+
+### 核心特性
+
+- **🌐 完整双语支持**：所有文档、技能和脚本都有完整的中英文版本
+- **🔄 轻松语言切换**：一条命令即可在中英文之间切换
+- **⚡ 专为 Claude 优化**：专为 Claude CLI 和 Claude Code 工作流设计
+- **🤖 多 Agent 框架**：用于复杂任务处理的高级思维框架
+- **📊 Web 看板界面**：用于任务管理和监控的可视化界面
+- **🔧 CLI 工具**：用于自动化任务处理的命令行工具
+- **📝 全面文档**：详细的指南、示例和 API 参考
+
+---
+
+## 🛠️ 可用技能
 
 ### 1️⃣ 深度提示词创作助手 (Prompt Deep Creator)
-<details>
-<summary><b>点击展开：将模糊想法转化为专业 Prompt 🚀</b></summary>
 
-#### 🔹 功能核心
-将零散、口语化、甚至模糊的创作想法，转化为高质量、结构清晰、可直接使用的正式提示词。
-- **提取要素**：自动识别核心目标、受众、风格及约束条件。
-- **结构化输出**：生成包含角色设定、任务背景、核心任务及禁止事项的标准模板。
-- **智能追问**：当输入信息不足时，主动引导补充关键要素。
+**将模糊想法转化为专业、结构化的提示词**
 
-#### 🔹 适用场景
-- **写作创作**：技术博客、深度长文、科普文章。
-- **方案设计**：商业方案、产品需求文档 (PRD)。
+这个技能将你零散、口语化甚至模糊的创意想法，转化为高质量、结构清晰、可直接使用的正式提示词。
 
-#### 🔹 安装方法
-1. 下载 `prompt-deep-creator.zip` 并解压。
-2. 将 `skill.md` 内容复制到你的 Claude 预设指令中，或将解压后的文件夹放入软件的 `skills` 目录。
-3. 如果使用 `skills.json` 管理，请添加对应路径。
-</details>
+#### 功能特点
+- **智能要素提取**：自动识别核心目标、目标受众、风格偏好和约束条件
+- **结构化输出生成**：创建包含角色设定、任务背景、核心目标和禁止事项的标准化模板
+- **智能追问**：当输入信息不足时，主动引导你补充关键要素
+- **多语言支持**：在中英文环境中无缝工作
+
+#### 适用场景
+- **内容创作**：技术博客、深度文章、研究论文、文档编写
+- **商业规划**：商业方案、产品需求文档 (PRD)、项目计划
+- **学术写作**：研究论文、论文陈述、文献综述
+- **创意写作**：故事、剧本、营销文案、社交媒体内容
+
+#### 安装方法
+1. 下载 `prompt-deep-creator.zip` 并解压
+2. 将 `skill.md` 内容复制到你的 Claude 预设指令中，或将解压后的文件夹放入软件的 `skills` 目录
+3. 如果使用 `skills.json` 管理，请添加对应路径
 
 ---
 
-### 2️⃣ 三省六部 · 多 Agent 思维框架 (Sansheng)
-<details>
-<summary><b>点击展开：通用任务处理行政体系 ⚔️</b></summary>
+### 2️⃣ 三省六部 · 多Agent思维框架 (Sansheng)
 
-#### 🔹 功能核心
-将任何复杂任务按照"分拣→规划→审议→派发→执行→汇总"的严格流程进行结构化处理。
-- **太子 · 接旨分拣**：判断任务类型并提取核心需求。
-- **中书省 · 起草方案**：制定具体、可执行的方案（拒绝空话）。
-- **门下省 · 审议把关**：**核心特色**，不合格的方案会被直接"封驳"。
-- **六部 · 实际执行**：兵部(技术)、礼部(文档)、户部(数据)等部门实际产出成果。
+**通用任务处理行政系统**
 
-#### 🔹 安装方法
-1. 下载 `The Three Provinces and Six Ministries System AI Agent (win)_skill_v1.0.zip` 并解压。
+这是一个复杂的多 Agent 思维框架，按照中国传统行政体系"三省六部"来结构化处理任何复杂任务。它通过分拣、规划、审议、派发、执行、汇总的严格工作流程，确保任务得到彻底处理。
+
+#### 功能特点
+- **太子 · 接旨分拣**：判断任务类型并提取核心需求
+- **中书省 · 起草方案**：制定具体、可执行的方案（拒绝空话）
+- **门下省 · 审议把关**：**核心特色** - 不合格的方案会被直接"封驳"并给出详细反馈
+- **六部 · 实际执行**：专业部门产出实际成果：
+  - **户部**：数据分析、资源管理、预算统计
+  - **礼部**：文档撰写、规范制定、沟通协调
+  - **兵部**：工程开发、代码实现、技术方案
+  - **刑部**：安全审计、合规检查、风险评估
+  - **工部**：基础设施、部署运维、自动化脚本
+  - **吏部**：人事协调、团队管理、资源调配
+
+#### 安装方法
+1. 下载技能包并解压
 2. **CLI 模式**：
-   - 确保安装了 Python 3。
-   - 在终端运行 `python3 edict.py '{"task":"任务内容"}'` 即可触发流转。
+   - 确保安装了 Python 3
+   - 在终端运行 `python3 edict.py '{"task":"任务内容"}'` 即可触发流转
 3. **Web 看板模式**：
-   - 运行 `python3 scripts/serve.py` 启动可视化界面（访问 127.0.0.1:7891）。
-</details>
+   - 运行 `python3 scripts/serve.py` 启动可视化界面（访问 127.0.0.1:7891）
 
 ---
 
-## 📥 通用安装与配置 (Installation)
+## 📥 安装与配置
 
-针对主流 Claude 终端工具，你可以按照以下方式集成：
+### 适用于 Claude CLI / Claude Code
 
-### 方法 A：目录集成（推荐）
-1. 找到你的软件安装目录（例如 `~/.gemini/antigravity/scratch/`）。
-2. 将对应的技能文件夹拷贝至 `skills/` 目录下。
-3. 重启 Claude CLI，尝试输入"使用三省六部处理..."或"帮我深度创作一个提示词"。
+#### 方法 1：目录集成（推荐）
+1. 找到你的 Claude CLI 技能目录（例如 `~/.claude/skills/` 或 `~/.gemini/antigravity/scratch/skills/`）
+2. 将对应的技能文件夹拷贝至 `skills/` 目录下
+3. 重启 Claude CLI，尝试：
+   - "使用三省六部处理这个任务..."
+   - "帮我深度创作一个关于...的提示词"
 
-### 方法 B：配置文件关联
-在你的 `skills.json` 中添加如下配置：
+#### 方法 2：配置文件
+在你的 `skills.json` 中添加：
 ```json
 {
   "skills": [
@@ -82,13 +118,269 @@
 }
 ```
 
+### 适用于 OpenAI Codex
+
+这些技能可以通过以下方式适配 OpenAI Codex：
+1. 将技能文件转换为 Codex 兼容格式
+2. 将思维框架集成到你的 Codex 工作流中
+3. 使用双语文档进行跨平台理解
+
 ---
 
-## 📄 文档
+## 🌐 语言切换
 
-- **[English Documentation / 英文文档](README.md)**
-- **[中文文档](README_CN.md)** (当前)
+### 快速切换脚本
+```bash
+# 切换到英文（默认）
+./switch_lang.sh en
+
+# 切换到中文
+./switch_lang.sh zh
+```
+
+### 手动选择
+- **英文**：使用 `README.md`、`SKILL.md`、`scripts/edict_en.py`
+- **中文**：使用 `README_CN.md`、`SKILL_CN.md`、`scripts/edict.py`
+
+### 编程 API
+```bash
+# 英文模式
+python3 scripts/edict.py '{"task":"Your task", "lang":"en"}'
+
+# 中文模式
+python3 scripts/edict.py '{"task":"你的任务", "lang":"zh"}'
+```
 
 ---
 
-*由 Claude Code Skills Hub v1.0.0 生成*
+## 🚀 快速开始示例
+
+### 示例 1：创建专业提示词
+```bash
+# 英文
+python3 scripts/edict_en.py '{"task":"Create a prompt for writing technical documentation"}'
+
+# 中文
+python3 scripts/edict.py '{"task":"帮我创建一个写技术文档的提示词", "lang":"zh"}'
+```
+
+### 示例 2：使用三省六部处理复杂任务
+```bash
+# 英文
+python3 scripts/edict_en.py '{"task":"Design a user authentication system with OAuth2", "priority":"high"}'
+
+# 中文
+python3 scripts/edict.py '{"task":"设计一个基于OAuth2的用户认证系统", "priority":"high"}'
+```
+
+### 示例 3：启动 Web 看板
+```bash
+# 英文版本
+python3 scripts/serve_en.py
+
+# 中文版本
+python3 scripts/serve.py
+
+# 然后访问 http://127.0.0.1:7891
+```
+
+---
+
+## 📁 仓库结构
+
+```
+claude-skills-bilingual-codex/
+├── README.md                 # 英文文档
+├── README_CN.md              # 中文文档（当前）
+├── SKILL.md                  # 英文技能文件
+├── SKILL_CN.md               # 中文技能文件
+├── skills.json               # 双语配置
+├── switch_lang.sh            # 语言切换脚本
+├── USAGE.md                  # 使用指南
+├── INSTALL.md                # 安装指南
+├── SUMMARY.md                # 完整总结
+├── _meta.json                # 元数据
+├── prompt-deep-creator.zip   # 深度提示词创作助手技能
+└── scripts/
+    ├── edict.py              # CLI 脚本（支持 lang 参数）
+    ├── edict_en.py           # 英文 CLI 脚本
+    ├── serve.py              # 中文 Web 看板服务器
+    └── serve_en.py           # 英文 Web 看板服务器
+```
+
+---
+
+## 🎨 功能详解
+
+### 双语文档
+- 所有文档都有完整的中英文版本
+- 两种语言之间内容一致
+- 轻松在语言之间切换
+- 翻译中保留文化背景
+
+### 高级思维框架
+- 多 Agent 协作处理复杂任务
+- 结构化工作流程确保任务彻底完成
+- 通过审查和把关机制进行质量控制
+- 专业部门产出实际成果
+
+### 开发者友好工具
+- 用于自动化任务处理的 CLI 工具
+- 用于可视化任务管理的 Web 界面
+- 用于集成到现有工作流的编程 API
+- 全面的错误处理和日志记录
+
+### 跨平台兼容性
+- 适用于 Claude CLI、Claude Code 和兼容工具
+- 可适配 OpenAI Codex 和其他 AI 助手
+- 标准 JSON 配置便于集成
+- 模块化设计允许自定义和扩展
+
+---
+
+## 🤝 贡献指南
+
+欢迎贡献！以下是你可以帮助的方式：
+
+1. **Fork 仓库**
+2. **创建功能分支**：`git checkout -b feature/amazing-feature`
+3. **提交更改**：`git commit -m 'Add amazing feature'`
+4. **推送到分支**：`git push origin feature/amazing-feature`
+5. **打开 Pull Request**
+
+### 贡献想法
+- 为特定用例添加新技能
+- 改进现有技能文档
+- 添加对其他 AI 平台的支持
+- 创建教程和示例
+- 报告错误和改进建议
+
+---
+
+## 📚 文档
+
+| 文档 | 语言 | 说明 |
+|------|------|------|
+| [README.md](README.md) | English | 英文文档 |
+| [README_CN.md](README_CN.md) | 中文 | 中文文档（当前） |
+| [INSTALL.md](INSTALL.md) | English | 安装指南 |
+| [USAGE.md](USAGE.md) | English | 使用指南和示例 |
+| [SUMMARY.md](SUMMARY.md) | English | 完整总结和概述 |
+
+---
+
+## 🔧 技术要求
+
+- **Python 3.6+**：运行 CLI 脚本必需
+- **Claude CLI**：完整 LLM 集成（可选）
+- **Git**：版本控制和仓库管理
+- **Web 浏览器**：访问 Web 看板界面（可选）
+
+---
+
+## 📊 技能对比
+
+| 特性 | 深度提示词创作助手 | 三省六部 |
+|------|-------------------|----------|
+| **主要用途** | 提示词创建 | 任务处理 |
+| **复杂度** | 简单到中等 | 中等到复杂 |
+| **输出** | 结构化提示词 | 任务结果和报告 |
+| **语言** | 中/英 | 中/英 |
+| **模式** | 仅 CLI | CLI + Web 看板 |
+| **需要 LLM** | 否（框架模式） | 可选（增强结果） |
+
+---
+
+## 🎓 学习资源
+
+### 入门
+1. 阅读[安装指南](INSTALL.md)
+2. 按照[使用指南](USAGE.md)操作
+3. 尝试上面的快速开始示例
+4. 探索技能文档
+
+### 进阶使用
+- 为你的特定需求自定义技能
+- 集成到现有工作流中
+- 基于框架创建新技能
+- 回馈社区
+
+---
+
+## 🐛 故障排除
+
+### 常见问题
+
+**Q: 找不到 Python**
+A: 确保 Python 3 已安装并在 PATH 中：
+```bash
+python3 --version
+```
+
+**Q: 未检测到 Claude CLI**
+A: 技能将在没有 Claude CLI 的"框架模式"下工作。要启用完整的 LLM 模式，请安装 Claude CLI 并运行：
+```bash
+claude --model
+```
+
+**Q: 权限被拒绝**
+A: 使脚本可执行：
+```bash
+chmod +x switch_lang.sh
+chmod +x scripts/*.py
+```
+
+**Q: 语言未切换**
+A: 确保你在正确的目录中，并且脚本有执行权限。
+
+---
+
+## 📈 路线图
+
+### 版本 1.0（当前）
+- ✅ 完整双语文档
+- ✅ 深度提示词创作助手技能
+- ✅ 三省六部思维框架
+- ✅ 语言切换支持
+- ✅ Web 看板界面
+
+### 版本 1.1（计划中）
+- 🔜 更多语言支持（日语、韩语等）
+- 🔜 针对不同领域的更多专业技能
+- 🔜 增强的 Web 看板，支持实时协作
+- 🔜 与更多 AI 平台集成
+
+### 版本 2.0（未来）
+- 🔜 高级分析和报告
+- 🔜 自定义扩展的插件系统
+- 🔜 基于云的部署选项
+- 🔜 企业功能和团队协作
+
+---
+
+## 📜 许可证
+
+本项目根据 MIT 许可证授权 - 有关详情，请参阅 [LICENSE](LICENSE) 文件。
+
+---
+
+## 🙏 致谢
+
+- 原始仓库：[Roger-666666/claude-skills](https://github.com/Roger-666666/claude-skills)
+- 为 Claude AI 社区用心打造
+- 灵感来源于中国传统行政体系
+- 为现代 AI 辅助开发工作流设计
+
+---
+
+## 📞 支持
+
+- **问题反馈**：[GitHub Issues](https://github.com/Roger-666666/claude-skills-bilingual-codex/issues)
+- **讨论交流**：[GitHub Discussions](https://github.com/Roger-666666/claude-skills-bilingual-codex/discussions)
+- **详细文档**：请查看 docs 文件夹中的指南
+
+---
+
+**由 Roger-666666 用心打造**
+
+*最后更新：2026-06-02*
