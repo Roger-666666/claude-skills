@@ -92,38 +92,259 @@ This is a sophisticated multi-agent thinking framework that structures any compl
 
 ## 📥 Installation & Configuration
 
-### For Claude CLI / Claude Code
+### 🤖 Claude Code Installation
 
-#### Method 1: Directory Integration (Recommended)
-1. Find your Claude CLI skills directory (e.g., `~/.claude/skills/` or `~/.gemini/antigravity/scratch/skills/`)
-2. Copy the corresponding skill folders to the `skills/` directory
-3. Restart Claude CLI and try:
-   - "Use Sansheng to process this task..."
-   - "Help me deeply create a prompt about..."
+Claude Code is Anthropic's official CLI for Claude. These skills are optimized for Claude Code workflows.
 
-#### Method 2: Configuration File
-Add to your `skills.json`:
+#### Method 1: Global Installation (Recommended)
+```bash
+# 1. Create skills directory
+mkdir -p ~/.claude/skills
+
+# 2. Clone the repository
+git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git ~/.claude/skills/claude-skills-bilingual-codex
+
+# 3. Add to your Claude Code settings (~/.claude/settings.json):
+```
+
 ```json
 {
   "skills": [
     {
       "name": "sansheng",
-      "path": "./skills/sansheng/SKILL.md"
+      "path": "~/.claude/skills/claude-skills-bilingual-codex/SKILL.md"
     },
     {
       "name": "prompt-deep-creator",
-      "path": "./skills/prompt-deep-creator/skill.md"
+      "path": "~/.claude/skills/claude-skills-bilingual-codex/prompt-deep-creator/skill.md"
     }
   ]
 }
 ```
 
-### For OpenAI Codex
+#### Method 2: Project-Specific Installation
+```bash
+# 1. Navigate to your project
+cd your-project
 
-These skills can be adapted for use with OpenAI Codex by:
-1. Converting the skill files to Codex-compatible format
-2. Integrating the thinking framework into your Codex workflow
-3. Using the bilingual documentation for cross-platform understanding
+# 2. Create local skills directory
+mkdir -p .claude/skills
+
+# 3. Clone or copy skills
+git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git .claude/skills/claude-skills-bilingual-codex
+
+# 4. Create project-specific settings (.claude/settings.json):
+```
+
+```json
+{
+  "skills": [
+    {
+      "name": "sansheng",
+      "path": ".claude/skills/claude-skills-bilingual-codex/SKILL.md"
+    },
+    {
+      "name": "prompt-deep-creator",
+      "path": ".claude/skills/claude-skills-bilingual-codex/prompt-deep-creator/skill.md"
+    }
+  ]
+}
+```
+
+#### Method 3: Using Claude Code CLI
+```bash
+# Install skills using Claude Code's built-in command
+claude skills install
+
+# Or manually add via Claude Code's interactive mode
+claude
+# Then type: /skills add ~/.claude/skills/claude-skills-bilingual-codex/SKILL.md
+```
+
+---
+
+### 🔧 OpenAI Codex Installation
+
+OpenAI Codex is OpenAI's code generation model. These skills can be adapted for Codex workflows.
+
+#### Method 1: Codex CLI Integration
+```bash
+# 1. Install Codex CLI (if not already installed)
+npm install -g @openai/codex
+
+# 2. Create Codex skills directory
+mkdir -p ~/.codex/skills
+
+# 3. Clone the repository
+git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git ~/.codex/skills/claude-skills-bilingual-codex
+
+# 4. Create Codex configuration (~/.codex/config.json):
+```
+
+```json
+{
+  "skills": {
+    "sansheng": {
+      "path": "~/.codex/skills/claude-skills-bilingual-codex/SKILL.md",
+      "description": "Three Provinces and Six Ministries multi-agent thinking framework"
+    },
+    "prompt-deep-creator": {
+      "path": "~/.codex/skills/claude-skills-bilingual-codex/prompt-deep-creator/skill.md",
+      "description": "Transform vague ideas into professional prompts"
+    }
+  }
+}
+```
+
+#### Method 2: Codex API Integration
+```python
+# Create a Python wrapper for Codex API
+import os
+from openai import OpenAI
+
+class CodexSkills:
+    def __init__(self):
+        self.client = OpenAI()
+        self.skills_dir = os.path.expanduser("~/.codex/skills/claude-skills-bilingual-codex")
+
+    def load_skill(self, skill_name):
+        skill_path = os.path.join(self.skills_dir, f"{skill_name}.md")
+        with open(skill_path, 'r', encoding='utf-8') as f:
+            return f.read()
+
+    def process_with_sansheng(self, task, priority="normal"):
+        skill_content = self.load_skill("SKILL")
+        response = self.client.chat.completions.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": skill_content},
+                {"role": "user", "content": f"Task: {task}\nPriority: {priority}"}
+            ]
+        )
+        return response.choices[0].message.content
+
+# Usage
+skills = CodexSkills()
+result = skills.process_with_sansheng("Design a user authentication system")
+print(result)
+```
+
+---
+
+### 🐾 OpenClaw Installation
+
+OpenClaw is an open-source AI agent framework. These skills are compatible with OpenClaw's skill system.
+
+#### Method 1: OpenClaw Skill Directory
+```bash
+# 1. Create skills directory
+mkdir -p ~/.openclaw/skills
+
+# 2. Clone the repository
+git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git ~/.openclaw/skills/claude-skills-bilingual-codex
+
+# 3. Register skills with OpenClaw
+openclaw skills register ~/.openclaw/skills/claude-skills-bilingual-codex/SKILL.md
+openclaw skills register ~/.openclaw/skills/claude-skills-bilingual-codex/prompt-deep-creator/skill.md
+```
+
+#### Method 2: OpenClaw Configuration File
+```yaml
+# ~/.openclaw/config.yaml
+skills:
+  - name: sansheng
+    path: ~/.openclaw/skills/claude-skills-bilingual-codex/SKILL.md
+    description: "Three Provinces and Six Ministries multi-agent thinking framework"
+    enabled: true
+
+  - name: prompt-deep-creator
+    path: ~/.openclaw/skills/claude-skills-bilingual-codex/prompt-deep-creator/skill.md
+    description: "Transform vague ideas into professional prompts"
+    enabled: true
+
+settings:
+  default_language: en
+  auto_load_skills: true
+```
+
+#### Method 3: OpenClaw Python Integration
+```python
+# Create an OpenClaw skill integration
+import os
+from openclaw import Agent, Skill
+
+class SanshengSkill(Skill):
+    def __init__(self):
+        super().__init__(
+            name="sansheng",
+            description="Multi-agent thinking framework for task processing"
+        )
+        self.skills_dir = os.path.expanduser("~/.openclaw/skills/claude-skills-bilingual-codex")
+
+    def execute(self, task, priority="normal"):
+        skill_path = os.path.join(self.skills_dir, "SKILL.md")
+        with open(skill_path, 'r', encoding='utf-8') as f:
+            skill_content = f.read()
+
+        agent = Agent()
+        return agent.process(
+            system_prompt=skill_content,
+            user_message=f"Task: {task}\nPriority: {priority}"
+        )
+
+# Register the skill with OpenClaw
+from openclaw import SkillRegistry
+registry = SkillRegistry()
+registry.register(SanshengSkill())
+```
+
+---
+
+### 🔧 General Installation
+
+For other AI coding tools or custom setups.
+
+#### Method 1: Manual Integration
+```bash
+# 1. Clone the repository
+git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git
+cd claude-skills-bilingual-codex
+
+# 2. Choose your language
+./switch_lang.sh en  # or zh
+
+# 3. Use the CLI scripts directly
+python3 scripts/edict.py '{"task":"Your task here"}'
+python3 scripts/edict_en.py '{"task":"Your task here"}'
+
+# 4. Or use the Web Kanban
+python3 scripts/serve.py
+# Visit http://127.0.0.1:7891
+```
+
+#### Method 2: Docker Installation
+```dockerfile
+# Dockerfile for containerized installation
+FROM python:3.9-slim
+
+# Install dependencies
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+
+# Clone the repository
+RUN git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git /opt/skills
+
+# Set working directory
+WORKDIR /opt/skills
+
+# Default command
+CMD ["python3", "scripts/edict.py", '{"task":"Test task"}']
+```
+
+```bash
+# Build and run the Docker container
+docker build -t claude-skills .
+docker run -it claude-skills
+```
 
 ---
 

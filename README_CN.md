@@ -92,38 +92,259 @@
 
 ## 📥 安装与配置
 
-### 适用于 Claude CLI / Claude Code
+### 🤖 Claude Code 安装
 
-#### 方法 1：目录集成（推荐）
-1. 找到你的 Claude CLI 技能目录（例如 `~/.claude/skills/` 或 `~/.gemini/antigravity/scratch/skills/`）
-2. 将对应的技能文件夹拷贝至 `skills/` 目录下
-3. 重启 Claude CLI，尝试：
-   - "使用三省六部处理这个任务..."
-   - "帮我深度创作一个关于...的提示词"
+Claude Code 是 Anthropic 官方的 Claude CLI 工具。这些技能专为 Claude Code 工作流优化。
 
-#### 方法 2：配置文件
-在你的 `skills.json` 中添加：
+#### 方法 1：全局安装（推荐）
+```bash
+# 1. 创建技能目录
+mkdir -p ~/.claude/skills
+
+# 2. 克隆仓库
+git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git ~/.claude/skills/claude-skills-bilingual-codex
+
+# 3. 添加到你的 Claude Code 设置（~/.claude/settings.json）：
+```
+
 ```json
 {
   "skills": [
     {
       "name": "sansheng",
-      "path": "./skills/sansheng/SKILL.md"
+      "path": "~/.claude/skills/claude-skills-bilingual-codex/SKILL.md"
     },
     {
       "name": "prompt-deep-creator",
-      "path": "./skills/prompt-deep-creator/skill.md"
+      "path": "~/.claude/skills/claude-skills-bilingual-codex/prompt-deep-creator/skill.md"
     }
   ]
 }
 ```
 
-### 适用于 OpenAI Codex
+#### 方法 2：项目特定安装
+```bash
+# 1. 进入你的项目目录
+cd your-project
 
-这些技能可以通过以下方式适配 OpenAI Codex：
-1. 将技能文件转换为 Codex 兼容格式
-2. 将思维框架集成到你的 Codex 工作流中
-3. 使用双语文档进行跨平台理解
+# 2. 创建本地技能目录
+mkdir -p .claude/skills
+
+# 3. 克隆或复制技能
+git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git .claude/skills/claude-skills-bilingual-codex
+
+# 4. 创建项目特定设置（.claude/settings.json）：
+```
+
+```json
+{
+  "skills": [
+    {
+      "name": "sansheng",
+      "path": ".claude/skills/claude-skills-bilingual-codex/SKILL.md"
+    },
+    {
+      "name": "prompt-deep-creator",
+      "path": ".claude/skills/claude-skills-bilingual-codex/prompt-deep-creator/skill.md"
+    }
+  ]
+}
+```
+
+#### 方法 3：使用 Claude Code CLI
+```bash
+# 使用 Claude Code 内置命令安装技能
+claude skills install
+
+# 或通过 Claude Code 交互模式手动添加
+claude
+# 然后输入：/skills add ~/.claude/skills/claude-skills-bilingual-codex/SKILL.md
+```
+
+---
+
+### 🔧 OpenAI Codex 安装
+
+OpenAI Codex 是 OpenAI 的代码生成模型。这些技能可以适配 Codex 工作流。
+
+#### 方法 1：Codex CLI 集成
+```bash
+# 1. 安装 Codex CLI（如果尚未安装）
+npm install -g @openai/codex
+
+# 2. 创建 Codex 技能目录
+mkdir -p ~/.codex/skills
+
+# 3. 克隆仓库
+git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git ~/.codex/skills/claude-skills-bilingual-codex
+
+# 4. 创建 Codex 配置（~/.codex/config.json）：
+```
+
+```json
+{
+  "skills": {
+    "sansheng": {
+      "path": "~/.codex/skills/claude-skills-bilingual-codex/SKILL.md",
+      "description": "三省六部多Agent思维框架"
+    },
+    "prompt-deep-creator": {
+      "path": "~/.codex/skills/claude-skills-bilingual-codex/prompt-deep-creator/skill.md",
+      "description": "将模糊想法转化为专业提示词"
+    }
+  }
+}
+```
+
+#### 方法 2：Codex API 集成
+```python
+# 创建 Codex API 的 Python 包装器
+import os
+from openai import OpenAI
+
+class CodexSkills:
+    def __init__(self):
+        self.client = OpenAI()
+        self.skills_dir = os.path.expanduser("~/.codex/skills/claude-skills-bilingual-codex")
+
+    def load_skill(self, skill_name):
+        skill_path = os.path.join(self.skills_dir, f"{skill_name}.md")
+        with open(skill_path, 'r', encoding='utf-8') as f:
+            return f.read()
+
+    def process_with_sansheng(self, task, priority="normal"):
+        skill_content = self.load_skill("SKILL")
+        response = self.client.chat.completions.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": skill_content},
+                {"role": "user", "content": f"任务: {task}\n优先级: {priority}"}
+            ]
+        )
+        return response.choices[0].message.content
+
+# 使用
+skills = CodexSkills()
+result = skills.process_with_sansheng("设计一个用户认证系统")
+print(result)
+```
+
+---
+
+### 🐾 OpenClaw 安装
+
+OpenClaw 是一个开源 AI Agent 框架。这些技能与 OpenClaw 的技能系统兼容。
+
+#### 方法 1：OpenClaw 技能目录
+```bash
+# 1. 创建技能目录
+mkdir -p ~/.openclaw/skills
+
+# 2. 克隆仓库
+git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git ~/.openclaw/skills/claude-skills-bilingual-codex
+
+# 3. 向 OpenClaw 注册技能
+openclaw skills register ~/.openclaw/skills/claude-skills-bilingual-codex/SKILL.md
+openclaw skills register ~/.openclaw/skills/claude-skills-bilingual-codex/prompt-deep-creator/skill.md
+```
+
+#### 方法 2：OpenClaw 配置文件
+```yaml
+# ~/.openclaw/config.yaml
+skills:
+  - name: sansheng
+    path: ~/.openclaw/skills/claude-skills-bilingual-codex/SKILL.md
+    description: "三省六部多Agent思维框架"
+    enabled: true
+
+  - name: prompt-deep-creator
+    path: ~/.openclaw/skills/claude-skills-bilingual-codex/prompt-deep-creator/skill.md
+    description: "将模糊想法转化为专业提示词"
+    enabled: true
+
+settings:
+  default_language: zh
+  auto_load_skills: true
+```
+
+#### 方法 3：OpenClaw Python 集成
+```python
+# 创建 OpenClaw 技能集成
+import os
+from openclaw import Agent, Skill
+
+class SanshengSkill(Skill):
+    def __init__(self):
+        super().__init__(
+            name="sansheng",
+            description="用于任务处理的多Agent思维框架"
+        )
+        self.skills_dir = os.path.expanduser("~/.openclaw/skills/claude-skills-bilingual-codex")
+
+    def execute(self, task, priority="normal"):
+        skill_path = os.path.join(self.skills_dir, "SKILL.md")
+        with open(skill_path, 'r', encoding='utf-8') as f:
+            skill_content = f.read()
+
+        agent = Agent()
+        return agent.process(
+            system_prompt=skill_content,
+            user_message=f"任务: {task}\n优先级: {priority}"
+        )
+
+# 向 OpenClaw 注册技能
+from openclaw import SkillRegistry
+registry = SkillRegistry()
+registry.register(SanshengSkill())
+```
+
+---
+
+### 🔧 通用安装
+
+适用于其他 AI 编码工具或自定义设置。
+
+#### 方法 1：手动集成
+```bash
+# 1. 克隆仓库
+git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git
+cd claude-skills-bilingual-codex
+
+# 2. 选择语言
+./switch_lang.sh en  # 或 zh
+
+# 3. 直接使用 CLI 脚本
+python3 scripts/edict.py '{"task":"你的任务"}'
+python3 scripts/edict_en.py '{"task":"Your task here"}'
+
+# 4. 或使用 Web 看板
+python3 scripts/serve.py
+# 访问 http://127.0.0.1:7891
+```
+
+#### 方法 2：Docker 安装
+```dockerfile
+# 用于容器化安装的 Dockerfile
+FROM python:3.9-slim
+
+# 安装依赖
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+
+# 克隆仓库
+RUN git clone https://github.com/Roger-666666/claude-skills-bilingual-codex.git /opt/skills
+
+# 设置工作目录
+WORKDIR /opt/skills
+
+# 默认命令
+CMD ["python3", "scripts/edict.py", '{"task":"测试任务"}']
+```
+
+```bash
+# 构建并运行 Docker 容器
+docker build -t claude-skills .
+docker run -it claude-skills
+```
 
 ---
 
